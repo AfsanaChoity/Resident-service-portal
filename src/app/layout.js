@@ -1,14 +1,26 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Great_Vibes, Cabin, Adamina, Open_Sans } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const greatVibes = Great_Vibes({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-great-vibes-src",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cabin = Cabin({
   subsets: ["latin"],
+  variable: "--font-cabin-src",
+});
+
+const adamina = Adamina({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-adamina-src",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans-src",
 });
 
 export const metadata = {
@@ -20,8 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${greatVibes.variable} ${cabin.variable} ${adamina.variable} ${openSans.variable} bg-background text-foreground min-h-dvh`}>
         {children}
       </body>
     </html>
