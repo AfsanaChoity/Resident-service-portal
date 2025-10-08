@@ -1,0 +1,110 @@
+/* make labels white */
+.white-labels .ant-form-item-label>label {
+  color: #fff !important;
+  font-family: cabin, sans-serif;
+}
+
+/* phone prefix Select (in the addon) */
+.white-labels .ant-input-group-addon {
+  background-color: #fff !important;
+
+
+}
+
+/* the Select input area */
+.white-labels .ant-input-group-addon .ant-select-selector,
+.white-labels .ant-select-selector {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* the chevron icon */
+.white-labels .ant-select-arrow {
+  color: #000 !important;
+}
+
+/* dropdown menu (works because of getPopupContainer above) */
+.white-labels .ant-select-dropdown {
+  background: #fff !important;
+}
+
+.white-labels .ant-select-item-option {
+  color: #000 !important;
+}
+
+
+/* Keep inputs white even after user fills them or browser autofill applies styles */
+.white-labels .ant-input,
+.white-labels .ant-input-affix-wrapper,
+.white-labels .ant-input-group .ant-input,
+.white-labels input,
+.white-labels textarea,
+.white-labels .ant-select-selector,
+.white-labels .ant-picker,
+.white-labels .ant-input-group-addon {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+/* Chrome / Edge autofill override */
+.white-labels input:-webkit-autofill,
+.white-labels input:-webkit-autofill:hover,
+.white-labels input:-webkit-autofill:focus,
+.white-labels input:-webkit-autofill:active,
+.white-labels textarea:-webkit-autofill,
+.white-labels textarea:-webkit-autofill:hover,
+.white-labels textarea:-webkit-autofill:focus,
+.white-labels textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+/* Firefox autofill (older versions) */
+.white-labels input:-moz-autofill,
+.white-labels textarea:-moz-autofill {
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -moz-text-fill-color: #000 !important;
+}
+
+/* Ensure Ant wrapper children don't show a different background when focused/filled */
+.white-labels .ant-input-affix-wrapper .ant-input,
+.white-labels .ant-input-affix-wrapper input {
+  background-color: transparent !important;
+  /* wrapper handles background */
+}
+
+
+/* ===== Custom AntD Checkbox ===== */
+.custom-checkbox .ant-checkbox-inner {
+  border-color: white !important;       /* normal border white */
+  background-color: transparent !important;
+}
+
+.custom-checkbox:hover .ant-checkbox-inner {
+  border-color: white !important;       /* hover border white */
+}
+
+/* When checked */
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: white !important;   /* white background */
+  border-color: white !important;
+}
+
+/* The tick icon color */
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: black !important;       /* tick color black */
+}
+
+
+@media screen and (min-width: 430px) {
+  .ant-otp {
+    padding-inline: 0px;
+  }
+  
+
+  .ant-otp.ant-otp-lg .ant-otp-input {
+    padding: 14px;
+  }
+
+}
