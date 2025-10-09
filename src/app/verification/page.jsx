@@ -6,10 +6,10 @@ import '@/styles/AuthForm.css'
 import {
   ConfigProvider,
   Input,
-  Modal,
 } from 'antd';
 import AuthButton from '@/components/UI/AuthButton';
 import VerifyModal from '@/components/Authentications/VerifyModal';
+import img from '@/assets/images/frame.png'
 
 
 const VerificationForm = () => {
@@ -22,12 +22,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
  const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+
   
   return (
    <div className='max-w-md mx-auto space-y-4 md:space-y-8 mt-4 lg:mt-8 mb-4 md:mb-8'>
@@ -48,7 +43,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 
     {/* modal */}
     <div>
-        <VerifyModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel}/>
+        <VerifyModal isModalOpen={isModalOpen} text="Account Verified Successfully" image={img} buttonText='Okay' path='/sign-in'/>
     </div>
 
    </div>

@@ -78,7 +78,7 @@ const SignInForm = () => {
                 <Form.Item>
                     <div className='flex justify-between items-center '>
                         <Checkbox onChange={onChange} className='custom-checkbox !text-white !font-cabin'>Remember me</Checkbox>
-                        <Link href="/forgot-password" className='font-cabin font-semibold !text-white'>Forgot password</Link>
+                        <Link href="/forgot-password" className='font-cabin font-semibold !text-white'>Forgot password?</Link>
                     </div>
                 </Form.Item>
 

@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import PageFormat from '@/components/Authentications/shared/PageFormat'
 import '@/styles/AuthForm.css'
+import icon from '@/assets/icons/tick.svg'
 
 import {
     ConfigProvider,
@@ -11,15 +12,20 @@ import {
 } from 'antd';
 import AuthButton from '@/components/UI/AuthButton';
 import Link from 'next/link';
+import VerifyModal from '@/components/Authentications/VerifyModal';
 
-const { Option } = Select;
 
 const SignInForm = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [form] = Form.useForm();
 
     const onFinish = values => {
         console.log('Received values of form: ', values);
     };
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    }
 
 
     return (
@@ -68,11 +74,16 @@ const SignInForm = () => {
 
                 {/* Button */}
                 <Form.Item className='  '>
-                    <Link href="/sign-in">
-                        <AuthButton text="Continue" />
-                    </Link>
+                    
+                    <AuthButton onClick={showModal} text="Continue" />
+                    
                 </Form.Item>
             </Form>
+
+            {/* Modal */}
+            <div>
+                <VerifyModal isModalOpen={isModalOpen} text="Password Reset Successfully" icon={icon} buttonText='Okay' path='/sign-in'/>
+            </div>
         </div>
     );
 };
