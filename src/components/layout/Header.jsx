@@ -1,6 +1,7 @@
 'use client'
 import { Dropdown } from 'antd';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react'
 import { TfiAlignJustify } from "react-icons/tfi";
 
@@ -35,6 +36,9 @@ const mobileMenuItems = [
 
 export default function Header() {
   const [current, setCurrent] = React.useState(null);
+  
+  const pathname = usePathname();
+  const gold = "text-[#C6A664]";
 
   return (
     <div>
@@ -52,8 +56,8 @@ export default function Header() {
           {/* lists */}
           <div className='hidden lg:block'>
             <ul className='font-cabin lg:text-[16px] xl:text-[22px] flex uppercase'>
-              <Link href="/"><li className="mx-4 cursor-pointer">Home</li></Link>
-              <Link href="/services"><li className="mx-4 cursor-pointer">Services</li></Link>
+              <Link href="/"><li className={`mx-4 cursor-pointer ${pathname === "/" ? gold : " "}`}>Home</li></Link>
+              <Link href="/services"><li className={`mx-4 cursor-pointer ${pathname === "/services" ? gold: " "}`}>Services</li></Link>
               <a href="#map"><li className="mx-4 cursor-pointer">Packages</li></a>
               <a href="#features"><li className="mx-4 cursor-pointer">Pre-Arrival</li></a>
               {/* <a href="#founders"><li className="mx-4 cursor-pointer">Preferences Profile</li></a> */}
