@@ -1,5 +1,7 @@
-import "./globals.css";
+import Header from "@/components/layout/Header";
+import "../globals.css";
 import { Great_Vibes, Cabin, Adamina, Open_Sans } from "next/font/google";
+import Footer from "@/components/layout/Footer";
 
 const greatVibes = Great_Vibes({
   weight: "400",
@@ -33,7 +35,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${greatVibes.variable} ${cabin.variable} ${adamina.variable} ${openSans.variable} bg-background text-foreground min-h-dvh`}>
-        {children}
+        <Header />
+        <div className="w-full min-h-[58vh]">{children}</div>
+        <Footer />
       </body>
     </html>
   );
